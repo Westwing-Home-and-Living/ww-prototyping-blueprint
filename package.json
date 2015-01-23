@@ -1,0 +1,24 @@
+{
+  "name": "ww-prototyping-blueprint",
+  "version": "1.0.0",
+  "description": "Westwing Prototype Blueprint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Westwing-Home-and-Living/ww-prototyping-blueprint.git"
+  },
+  "keywords": [
+    "Westwing",
+    "blueprint"
+  ],
+  "author": "Savio van Hoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Westwing-Home-and-Living/ww-prototyping-blueprint/issues"
+  },
+  "homepage": "https://github.com/Westwing-Home-and-Living/ww-prototyping-blueprint",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.17.0"
+  }
+}
