@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-hologram');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Project configuration.
     grunt.initConfig({
@@ -43,6 +44,13 @@ module.exports = function (grunt) {
                 }
             }
         },
+        uglify: {
+            styleguide: {
+                files: [
+                    {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'}
+                ]
+            }
+        },
         watch: {
             sass: {
                 files: 'src/**/*.scss',
@@ -52,6 +60,6 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'hologram']);
+    grunt.registerTask('default', ['sass', 'hologram','uglify']);
 
 };

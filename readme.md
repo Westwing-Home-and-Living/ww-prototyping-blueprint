@@ -23,7 +23,7 @@ The basic file structure for this project looks like this.
 `build/styleguide/` contains a styleguide which is generated from hologram source files (`src/code_example_templates/`, 
 `src/doc_assets/`) and scss (`src/styleguide.scss`,`src/main.scss`).
 
-`build/ww` contains the actual prototype and is generated from scss (`src/styleguide`). Static files are
+`build/ww` contains the actual prototype and is generated from scss (`src/main.scss`). Static files are
 currently added directly in `build/www` folder. However future versions should have basic static file generator support.
 
 ## Quickstart

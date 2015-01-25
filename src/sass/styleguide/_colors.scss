@@ -10,22 +10,24 @@ category: basics
 basasdasd asdasss  ss asddasd
 
 ```html_example_table
-<button class="btn btnDefault">Click</button>
+<div class="sg-colors-green-dark">Click</div>
+<div class="sg-colors-green">Click</div>
+<div class="sg-colors-green-light">Click</div>
+<div class="sg-colors-green-lighter">Click</div>
 
-<a class="btn btnDefault" href="trulia.com">Trulia!</a>
 ```
 
 */
 
 .sg-colors-green-dark {
-  color: #449A88;
+  background-color: #449A88;
 }
 .sg-colors-green {
-  color: #72C1B0;
+  background-color: #72C1B0;
 }
 .sg-colors-green-light{
-  color: #65D1C4;
+  background-color: #65D1C4;
 }
-.sg-colors-green-light{
-  color: #C5E5DE;
+.sg-colors-green-lighter{
+  background-color: #C5E5DE;
 }
