@@ -1,5 +1,5 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 
     // load tasks
@@ -25,8 +25,15 @@ module.exports = function(grunt) {
                 sourceMap: true
             },
             www: {
-                src: 'src/sass/main.scss',
-                dest: 'build/www/css/main.css'
+                files: [
+                    {src: 'src/sass/main.scss', dest: 'build/www/css/main.css'},
+                    {src: 'src/sass/main.scss', dest: 'build/styleguide/css/main.css'}
+                ]
+            },
+            styleguide: {
+                files: [
+                    {src: 'src/sass/styleguide.scss', dest: 'build/styleguide/css/styleguide.css'}
+                ]
             }
         },
         hologram: {
@@ -45,6 +52,6 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', ['sass','hologram']);
+    grunt.registerTask('default', ['sass', 'hologram']);
 
 };
