@@ -7,14 +7,13 @@ title: Buttons
 name: button
 category: basics
 ---
-basasdasd asdasss  ss asddasd
+These are colors
 
-```html_example_table
-<div class="sg-colors-green-dark">Click</div>
-<div class="sg-colors-green">Click</div>
-<div class="sg-colors-green-light">Click</div>
-<div class="sg-colors-green-lighter">Click</div>
-
+```color_example
+green-dark,
+green,
+green-light,
+green-lighter
 ```
 
 */
@@ -30,4 +29,21 @@ basasdasd asdasss  ss asddasd
 }
 .sg-colors-green-lighter{
   background-color: #C5E5DE;
+}
+
+[class^="sg-colors"] {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  float: left;
+  margin-left: 20px;
+  > div {
+    position: absolute;
+    bottom: -50px;
+    text-align: center;
+    width: 100%;
+  }
 }

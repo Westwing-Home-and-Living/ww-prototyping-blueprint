@@ -47,6 +47,7 @@ module.exports = function (grunt) {
         uglify: {
             styleguide: {
                 files: [
+                    {src: 'src/js/handlebars-v2.0.0.js', dest: 'build/styleguide/js/handlebars.min.js'},
                     {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'}
                 ]
             }
