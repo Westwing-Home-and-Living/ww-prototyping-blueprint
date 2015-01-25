@@ -5,6 +5,7 @@ module.exports = function(grunt) {
     // load tasks
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-hologram');
 
     // Project configuration.
     grunt.initConfig({
@@ -28,6 +29,13 @@ module.exports = function(grunt) {
                 dest: 'build/www/css/main.css'
             }
         },
+        hologram: {
+            generate: {
+                options: {
+                    config: 'hologram_config.yml'
+                }
+            }
+        },
         watch: {
             sass: {
                 files: '<%= sass.www.src %>',
@@ -37,6 +45,6 @@ module.exports = function(grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['sass','hologram']);
 
 };
