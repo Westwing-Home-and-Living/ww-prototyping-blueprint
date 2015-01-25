@@ -6,6 +6,7 @@ This is a simple blueprint to kick off mockups and prototypes at Westwing.
 
 The basic file structure for this project looks like this.
 
+`
 ├── build
 │   ├── styleguide
 │   │   └── css
@@ -17,6 +18,7 @@ The basic file structure for this project looks like this.
     └── sass
         └── main.scss
         └── styleguide.scss
+`
 
 `build/styleguide/` contains a styleguide which is generated from hologram source files (`src/code_example_templates/`, 
 `src/doc_assets/`) and scss (`src/styleguide.scss`,`src/main.scss`).
