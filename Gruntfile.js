@@ -7,19 +7,27 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-hologram');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('assemble');
 
     // Project configuration.
     grunt.initConfig({
 
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
-        banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-            '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-            '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-            '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-            ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 
         // Task configuration.
+        assemble: {
+            options: {
+                flatten: true,
+                layout: 'page.hbs',
+                layoutdir: './src/site/templates/layouts/',
+                partials: './src/site/templates/partials/**/*.hbs'
+            },
+            site: {
+                files: [
+                    {src: './src/site/content/_pages/**/*.hbs', dest: 'build/www/'}
+                ]
+            }},
         sass: {
             options: {
                 banner: '<%= banner %>',
@@ -55,7 +63,7 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: 'src/**/*.scss',
-                tasks: ['sass:www','sass:styleguide']
+                tasks: ['sass:www','sass:styleguide','hologram']
             },
             js: {
                 files: 'src/**/*.js',
