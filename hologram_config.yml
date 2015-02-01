@@ -15,13 +15,13 @@ documentation_assets: ./src/styleguide/templates/partials
 # The folder that contains templates for rendering code examples.
 # If you want to change the way code examples appear in the styleguide,
 # modify the files in this folder
-code_example_templates: ./src/styleguide/layouts/code_example_templates
+code_example_templates: ./src/styleguide/code_layouts/code_example_templates
 
 # The folder that contains custom code example renderers.
 # If you want to create additional renderers that are not provided
 # by Hologram (i.e. coffeescript renderer, jade renderer, etc)
 # place them in this folder
-code_example_renderers: ./src/styleguide/layouts/code_example_renderers
+code_example_renderers: ./src/styleguide/code_layouts/code_example_renderers
 
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documentation assets

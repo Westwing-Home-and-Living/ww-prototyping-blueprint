@@ -20,7 +20,7 @@ module.exports = function (grunt) {
             options: {
                 flatten: true,
                 layout: 'page.hbs',
-                layoutdir: './src/site/templates/layouts/',
+                layoutdir: './src/site/templates/code_layouts/',
                 partials: './src/site/templates/partials/**/*.hbs'
             },
             site: {
