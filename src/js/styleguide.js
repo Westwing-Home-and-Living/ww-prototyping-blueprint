@@ -15,7 +15,6 @@
         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     }
 
-    console.log(colorsArray);
 
     // create template
     var templateSrc = '{{#each colors}}<div class="sg-colors-{{this}}"><div>Sass Variable: ${{this}}</div></div>{{/each}}';

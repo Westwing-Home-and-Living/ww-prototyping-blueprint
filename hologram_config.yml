@@ -23,11 +23,6 @@ code_example_templates: ./src/styleguide/templates/code_layouts/code_example_tem
 # place them in this folder
 code_example_renderers: ./src/styleguide/templates/code_layouts/code_example_renderers
 
-# Mark which category should be the index page
-# Alternatively, you may have an index.md in the documentation assets
-# folder instead of specifying this config.
-index: basics
-
 # To additionally output navigation for top level sections, set the value to
 # 'section'. To output navigation for sub-sections,
 # set the value to `all`

@@ -44,3 +44,12 @@ currently added directly in `build/www` folder. However future versions should h
 This task requires you to have Ruby and Hologram installed. 
 If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. 
 When you've confirmed you have Ruby installed, run `gem install hologram` to install hologram.
+
+
+# Todo
+
+- Refactor styleguide classes from hologram. I.e. in h1 tags
+
+## Bugs
+
+- block order: To order blocks @see https://github.com/trulia/hologram/issues/69

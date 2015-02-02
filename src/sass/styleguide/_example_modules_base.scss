@@ -1,0 +1,56 @@
+/*doc
+---
+title: Alert
+name: 01_alert
+category: Basics
+---
+
+```html_example
+    <div class='alert alert--red'>Don't panic!</div>
+```
+
+```html_example
+    <div class='alert alert--green'>Phew!</div>
+```
+*/
+.alert {
+  width: 50%;
+  box-sizing: border-box;
+  height: 50px;
+  border: 2px solid;
+  border-radius: 5px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+}
+.alert--red {
+  border-color: mediumvioletred;
+  background-color: palevioletred;
+
+}
+.alert--green {
+  border-color: #006400;
+  background-color: darkseagreen;
+}
+
+/*doc
+---
+title: Labels
+name: 02_labels
+category: Basics
+---
+```html_example
+    <div class='label'>Don't put labels on me!</div>
+```
+*/
+.label {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  background-color: grey;
+  color: white;
+  font-size: 12px;
+}
