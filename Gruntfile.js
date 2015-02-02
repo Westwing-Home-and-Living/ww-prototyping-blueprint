@@ -3,6 +3,8 @@ module.exports = function (grunt) {
 
 
     // load tasks
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-hologram');
@@ -16,6 +18,32 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // Task configuration.
+        connect: {
+            server: {
+                options:{
+                    port: 9000,
+                    hostname: '127.0.0.1',
+                    base: 'build/',
+                    livereload: true
+                }
+            }
+        },
+        open: {
+            www: {
+                path: 'http://127.0.0.1:9000/www',
+                app: 'Google Chrome',
+                options: {
+                    delay: '200'
+                }
+            },
+            styleguide: {
+                path: 'http://127.0.0.1:9000/styleguide',
+                app: 'Google Chrome',
+                options: {
+                    delay: '200'
+                }
+            }
+        },
         assemble: {
             options: {
                 flatten: true,
@@ -30,7 +58,6 @@ module.exports = function (grunt) {
             }},
         sass: {
             options: {
-                banner: '<%= banner %>',
                 sourceMap: true
             },
             www: {
@@ -63,16 +90,44 @@ module.exports = function (grunt) {
         watch: {
             sass: {
                 files: 'src/**/*.scss',
-                tasks: ['sass:www','sass:styleguide','hologram']
+                tasks: ['sass:www','sass:styleguide','hologram'],
+                options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            hologram: {
+                files: 'src/styleguide/**/*.*',
+                tasks: ['hologram'],
+                options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: true
+                }
             },
             js: {
                 files: 'src/**/*.js',
-                tasks: ['uglify:styleguide']
+                tasks: ['uglify:styleguide'],
+                options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            staticsitegenerator: {
+                files: 'src/site/**/*.*',
+                tasks: ['assemble'],
+                options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: true
+                }
             }
         }
     });
 
     // Default task.
-    grunt.registerTask('default', ['sass', 'hologram','uglify','assemble']);
+    grunt.registerTask('serve', ['connect:server','open','watch']);
 
 };
