@@ -1,11 +1,13 @@
 /*global module:false*/
 module.exports = function (grunt) {
 
-
+    var fs = require('fs');
+    var path = require('path');
     // load tasks
-    grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-hologram');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -18,13 +20,13 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // Task configuration.
-        connect: {
+        express: {
             server: {
                 options:{
                     port: 9000,
                     hostname: '127.0.0.1',
-                    base: 'build/',
-                    livereload: true
+                    bases: 'build/',
+                    server: path.resolve('./server.js')
                 }
             }
         },
@@ -83,8 +85,43 @@ module.exports = function (grunt) {
             styleguide: {
                 files: [
                     {src: 'src/js/handlebars-v2.0.0.js', dest: 'build/styleguide/js/handlebars.min.js'},
+                    {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'},
                     {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'}
                 ]
+            },
+            www: {
+                files: [
+                    {src: 'src/js/jquery.js', dest: 'build/www/js/jquery.min.js'},
+                    {src: 'src/js/JSXTransformer.js', dest: 'build/www/js/JSXTransformer.min.js'},
+                    {src: 'src/js/react.js', dest: 'build/www/js/react.min.js'}
+                ],
+                options: {
+                    mangle: false
+                }
+            }
+        },
+        copy: {
+            www: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+
+                    // Copy the main file and the RequireJS lib, the only requirements for production
+                    src: ['src/js/react/example.js'],
+                    dest: 'build/www/js/',
+                    filter: 'isFile'
+                }]
+            },
+            json: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+
+                    // Copy the main file and the RequireJS lib, the only requirements for production
+                    src: ['src/js/data/comments.json'],
+                    dest: 'build/www/data/',
+                    filter: 'isFile'
+                }]
             }
         },
         watch: {
@@ -107,12 +144,30 @@ module.exports = function (grunt) {
                 }
             },
             js: {
-                files: 'src/**/*.js',
-                tasks: ['uglify:styleguide'],
+                files: 'src/js/*.js',
+                tasks: ['uglify:styleguide','uglify:www'],
+               options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: true
+                }
+            },
+            react: {
+                files: 'src/js/react/*.js',
+                tasks: ['copy:www'],
                 options: {
                     atBegin: true,
                     spawn: false,
                     livereload: true
+                }
+            },
+            json: {
+                files: 'src/js/data/*.json',
+                tasks: ['copy:json'],
+                options: {
+                    atBegin: true,
+                    spawn: false,
+                    livereload: false
                 }
             },
             staticsitegenerator: {
@@ -128,6 +183,6 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('serve', ['connect:server','open','watch']);
+    grunt.registerTask('serve', ['express:server','open','copy','watch']);
 
 };
