@@ -4,4 +4,10 @@ posted: 2014-01-28
 ---
 
 <div id="content"></div>
-<script type="text/jsx" src="js/example.js"></script>
+
+<script type="text/jsx">
+    React.render(
+            <MyComponent2 message="Hi" />,
+            document.getElementById('content')
+    );
+</script>

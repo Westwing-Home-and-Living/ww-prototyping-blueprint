@@ -5,6 +5,7 @@ module.exports = function (grunt) {
     var path = require('path');
     // load tasks
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-express');
@@ -12,6 +13,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-hologram');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('assemble');
+    grunt.loadNpmTasks('grunt-react');
+
+
 
     // Project configuration.
     grunt.initConfig({
@@ -26,7 +30,8 @@ module.exports = function (grunt) {
                     port: 9000,
                     hostname: '127.0.0.1',
                     bases: 'build/',
-                    server: path.resolve('./server.js')
+                    server: path.resolve('./server.js'),
+                    livereload: true
                 }
             }
         },
@@ -84,9 +89,10 @@ module.exports = function (grunt) {
         uglify: {
             styleguide: {
                 files: [
-                    {src: 'src/js/handlebars-v2.0.0.js', dest: 'build/styleguide/js/handlebars.min.js'},
                     {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'},
-                    {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'}
+                    {src: 'src/js/jquery.js', dest: 'build/styleguide/js/jquery.min.js'},
+                    {src: 'src/js/JSXTransformer.js', dest: 'build/styleguide/js/JSXTransformer.min.js'},
+                    {src: 'src/js/react.js', dest: 'build/styleguide/js/react.min.js'}
                 ]
             },
             www: {
@@ -100,24 +106,23 @@ module.exports = function (grunt) {
                 }
             }
         },
-        copy: {
-            www: {
-                files: [{
-                    expand: true,
-                    flatten: true,
+        react: {
+            jsx: {
+                options: {
+                    transform: [require('grunt-react').browserify]
+                },
+                files: [
+                    {src: 'src/js/react/*.jsx', dest: 'build/www/js/output.js'},
+                    {src: 'src/js/react/*.jsx', dest: 'build/styleguide/js/output.js'}
+                ]
 
-                    // Copy the main file and the RequireJS lib, the only requirements for production
-                    src: ['src/js/react/example.js'],
-                    dest: 'build/www/js/',
-                    filter: 'isFile'
-                }]
-            },
+            }
+        },
+        copy: {
             json: {
                 files: [{
                     expand: true,
                     flatten: true,
-
-                    // Copy the main file and the RequireJS lib, the only requirements for production
                     src: ['src/js/data/comments.json'],
                     dest: 'build/www/data/',
                     filter: 'isFile'
@@ -153,8 +158,8 @@ module.exports = function (grunt) {
                 }
             },
             react: {
-                files: 'src/js/react/*.js',
-                tasks: ['copy:www'],
+                files: 'src/js/react/*.jsx',
+                tasks: ['react:jsx'],
                 options: {
                     atBegin: true,
                     spawn: false,
@@ -170,7 +175,7 @@ module.exports = function (grunt) {
                     livereload: false
                 }
             },
-            staticsitegenerator: {
+            assemble: {
                 files: 'src/site/**/*.*',
                 tasks: ['assemble'],
                 options: {

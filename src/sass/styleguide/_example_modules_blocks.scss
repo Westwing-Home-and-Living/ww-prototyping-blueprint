@@ -89,3 +89,29 @@ category: Blocks
   background-color: #232927;
   background-size: 100px 100px;
 }
+
+/*doc
+---
+title: React Komponente
+name: 04_patterns
+category: Blocks
+---
+```react_example
+  <MyComponent />
+```
+*/
+
+
+/*doc
+---
+title: React Komponente 2
+name: 05_patterns
+category: Blocks
+---
+```react_example
+<div>
+  <MyComponent2 message="Das ist eine Komponente"></MyComponent2>
+  <MyComponent2 message="Das ist eine Komponented 2"></MyComponent2>
+</div>
+```
+*/

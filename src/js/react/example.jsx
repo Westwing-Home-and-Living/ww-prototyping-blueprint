@@ -99,7 +99,8 @@ var CommentBox = React.createClass({
         );
     }
 });
+/*
 React.render(
     <CommentBox url="data/comments.json" pollInterval={2000}/>,
     document.getElementById('content')
-);
+);*/
