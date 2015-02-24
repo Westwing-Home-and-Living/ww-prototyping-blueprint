@@ -1,0 +1,12 @@
+{
+  "demo--default": {
+    "class": "demo",
+    "modifier": "demo--default",
+    "copy": "This is a default demo"
+  },
+  "demo--small": {
+    "class": "demo",
+    "modifier": "demo--small",
+    "copy": "This is a small demo"
+  }
+}

@@ -26,9 +26,11 @@ JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
 
 ## Quickstart
 
-1. Install [hologram](https://github.com/trulia/hologram).
-2. Install node packages.
-3. Run `grunt`. Files will be in build directory
+0. Clone to any directory `git clone https://github.com/Westwing-Home-and-Living/ww-prototyping-blueprint.git` and cd into the project
+1. Install [hologram](https://github.com/trulia/hologram) `gem install hologram`.
+2. Run `npm install`.
+3. Run `grunt serve`.
+
 
 ## Creating Modules
 
@@ -48,13 +50,6 @@ JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
     │       └── partials          (1a) Create partial markup
     └── styleguide
 ```
-
-
-## Hologram Task
-
-This task requires you to have Ruby and Hologram installed. 
-If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. 
-When you've confirmed you have Ruby installed, run `gem install hologram` to install hologram.
 
 
 ## Todo

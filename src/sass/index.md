@@ -1,3 +1,3 @@
 # Styleguide
 
-This is the styleguide.
+This is the readme file for the styleguide.

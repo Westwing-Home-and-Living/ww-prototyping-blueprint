@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
+
+    <ul >
+        {{#each  pages }}
+            <li><a href="{{basename}}.html"> {{basename}}</a ></li >
+        {{/each  }}
+    </ul >
     <div class="page-header">
         <h1>Prototype Template</h1>
         <h2>{{ this.page.title }}</h2>
