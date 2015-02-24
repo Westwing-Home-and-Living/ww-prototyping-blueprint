@@ -2,7 +2,7 @@
 ---
 title: Box
 name: 01_base
-category: Base
+category: UI
 ---
 
 This is a box
@@ -19,11 +19,11 @@ This is a box
 
 .box {
   border: 1px solid black;
-  text-align: center;
-  height: 90px;
   color: black;
-  padding: 1em;
+  height: 90px;
   margin-bottom: 1em;
+  text-align: center;
+  padding: 1em;
   p {
     @include setFontSize($font-size-beta, $lines: 1, $marginTopLines: 1, $marginBottomLines: 0);
   }

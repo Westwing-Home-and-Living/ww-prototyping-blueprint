@@ -100,4 +100,7 @@ h1.styleguide {
   @include outer-container;
   background: white;
   padding: 1em;
+  margin-bottom: 4em;
+  margin-top: 1em;
+  border: 1px solid grey;
 }

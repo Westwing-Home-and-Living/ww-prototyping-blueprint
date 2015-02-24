@@ -1,0 +1,47 @@
+/*doc
+---
+title: Demo
+name: 01_demo
+category: Demo
+---
+
+This is a demo module
+
+```html_example
+<div class="demo demo--default">
+    <p>
+        This is a default demo module
+    </p>
+</div>
+```
+
+```html_example
+<div class="demo demo--alt">
+    <p>
+        This is an alt demo module
+    </p>
+</div>
+```
+
+*/
+
+.demo {
+  @include shift(2);
+  @include span-columns(8);
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+  height: 90px;
+  color: black;
+  padding: 1em;
+  margin-bottom: 1em;
+  p {
+    @include setFontSize($font-size-beta, $lines: 1, $marginTopLines: 1, $marginBottomLines: 0);
+  }
+}
+.demo--default {
+  background-color: teal;
+}
+.demo--alt {
+  background-color: palevioletred;
+}

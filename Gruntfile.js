@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             options: {
                 flatten: true,
                 layout: 'page.hbs',
-                data: './src/site/templates/data/**/*.{json,yml}',
+                data: './src/site/templates/partials/**/*.{json,yml}',
                 layoutdir: './src/site/templates/layouts/',
                 partials: './src/site/templates/partials/**/*.hbs'
             },

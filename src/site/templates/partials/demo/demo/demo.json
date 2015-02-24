@@ -4,9 +4,9 @@
     "modifier": "demo--default",
     "copy": "This is a default demo"
   },
-  "demo--small": {
+  "demo--alt": {
     "class": "demo",
-    "modifier": "demo--small",
-    "copy": "This is a small demo"
+    "modifier": "demo--alt",
+    "copy": "This is an alt demo"
   }
 }

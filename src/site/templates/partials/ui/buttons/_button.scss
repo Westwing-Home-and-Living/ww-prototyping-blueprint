@@ -1,0 +1,20 @@
+/*doc
+---
+title: Button
+name: 02_base
+category: UI
+---
+
+This is a demo module
+
+```html_example
+<button class="button button--default">
+    Default Button
+</button>
+```
+
+*/
+
+button {
+  @include button;
+}

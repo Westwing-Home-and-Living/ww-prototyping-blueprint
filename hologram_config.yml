@@ -2,7 +2,10 @@
 # All paths should be relative to there
 
 # The directory containing the source files to parse recursively
-source: ./src/sass
+source:
+ - ./src/site/templates/partials
+ - ./src/sass
+
 
 # The directory that hologram will build to
 destination: ./build/styleguide

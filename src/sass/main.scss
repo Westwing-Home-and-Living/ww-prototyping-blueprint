@@ -15,10 +15,8 @@
 @import "layout/base-layout";
 
 /* Modules */
-@import "modules/media-object";
-@import "modules/buttons";
-@import "modules/box";
-@import "modules/demo";
-
-
+@import "../site/templates/partials/ui/media-object/media-object";
+@import "../site/templates/partials/ui/buttons/button";
+@import "../site/templates/partials/ui/box/box";
+@import "../site/templates/partials/demo/demo/demo";
 
