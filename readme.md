@@ -1,6 +1,6 @@
 # Westwing Prototyping Blueprint
 
-This is a simple blueprint to kick off mockups and prototypes at Westwing.
+This is a simple blueprint to kick off mockups and prototypes using assemble.io and hologram.
 
 ## How it works
 
@@ -18,9 +18,9 @@ The basic file structure for this project looks like this.
     └── styleguide
 ```
 
-`build/styleguide/` contains a styleguide which is generated from hologram source files (`src/styleguide`).
+`build/styleguide/` contains a styleguide which is generated from (`src/sass`) using hologram templates (`src/styleguide`).
 
-`build/ww` contains the actual prototype and is generated from scss (`src/site`).
+`build/ww` contains the actual prototype and is generated from handlebars using assemble.io (`src/site`).
 
 JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
 
@@ -37,28 +37,27 @@ JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
     ├── js
     ├── sass
     │   ├── ...
-    │   ├── modules
-    │   ├── styleguide            (1c) Create partial css
+    │   ├── modules               (1c) Create partial css
     │   │                         (3)  If final, document your css
     │   ├── ...
     ├── site
     │   ├── content               (2)  Render partial in site and test. Iterate.
-    │   └── templates             (1b) Create mock data for partial
-    │       ├── data
-    │       ├── layouts
+    │   └── templates
+    │       ├── data              (1b) Create mock data for partial
+    │       ├── ...
     │       └── partials          (1a) Create partial markup
     └── styleguide
 ```
 
 
-# Hologram Task
+## Hologram Task
 
 This task requires you to have Ruby and Hologram installed. 
 If you're on OS X or Linux you probably already have Ruby installed; test with `ruby -v` in your terminal. 
 When you've confirmed you have Ruby installed, run `gem install hologram` to install hologram.
 
 
-# Todo
+## Todo
 
 - Refactor styleguide classes from hologram. I.e. in h1 tags
 - Right now CSS, JS and Markup are scattered across the whole project (which is more or less the traditional approach. Though jumping slows down development process
