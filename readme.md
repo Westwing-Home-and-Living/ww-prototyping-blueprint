@@ -6,39 +6,61 @@ This is a simple blueprint to kick off mockups and prototypes at Westwing.
 
 The basic file structure for this project looks like this.
 
-```bat
+```
+.
 ├── build
 │   ├── styleguide
 │   │   └── css
 │   └── www
-│       └── css
+│       ├── css
+│       └── js
 └── src
-    ├── code_example_templates
-    ├── doc_assets
-    └── sass
-        └── main.scss
-        └── styleguide.scss
+    ├── js
+    ├── sass
+    │   ├── ...
+    │   ├── modules
+    │   ├── styleguide
+    │   ├── ...
+    ├── site
+    │   ├── content
+    │   └── templates
+    │       ├── data
+    │       ├── layouts
+    │       └── partials
+    └── styleguide
 ```
 
-`build/styleguide/` contains a styleguide which is generated from hologram source files (`src/code_example_templates/`, 
-`src/doc_assets/`) and scss (`src/styleguide.scss`,`src/main.scss`).
+`build/styleguide/` contains a styleguide which is generated from hologram source files (`src/styleguide`).
 
-`build/ww` contains the actual prototype and is generated from scss (`src/main.scss`). Static files are
-currently added directly in `build/www` folder. However future versions should have basic static file generator support.
+`build/ww` contains the actual prototype and is generated from scss (`src/site`).
+
+JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
 
 ## Quickstart
 
-1. Install [hologram][https://github.com/trulia/hologram].
-1. Install [bourbon][https://github.com/trulia/hologram].
-1. Install [neat][https://github.com/trulia/hologram].
+1. Install [hologram](https://github.com/trulia/hologram).
 2. Install node packages.
 3. Run `grunt`. Files will be in build directory
 
-## Dependencies
+## Creating Modules
 
-- [grunt][https://github.com/gruntjs/grunt]
-- [grunt-sass][https://github.com/sindresorhus/grunt-sass]
-- [grunt-hologram][https://github.com/jchild3rs/grunt-hologram/]
+```
+└── src
+    ├── js
+    ├── sass
+    │   ├── ...
+    │   ├── modules
+    │   ├── styleguide            (1b) Create partial css
+    │   │                         (3)  If final, document your css
+    │   ├── ...
+    ├── site
+    │   ├── content               (2)  Render partial in site and test
+    │   └── templates
+    │       ├── data
+    │       ├── layouts
+    │       └── partials          (1a) Create partial markup
+    └── styleguide
+```
 
 
 # Hologram Task
@@ -51,6 +73,9 @@ When you've confirmed you have Ruby installed, run `gem install hologram` to ins
 # Todo
 
 - Refactor styleguide classes from hologram. I.e. in h1 tags
+- Right now CSS, JS and Markup are scattered across the whole project (which is more or less the traditional approach. Though jumping slows down development process
+- It would be nice if one would not be forced to write redundant Markup in CSS doc.
+--> ReactJS can solve all these problems (and is supported).
 
 ## Bugs
 
