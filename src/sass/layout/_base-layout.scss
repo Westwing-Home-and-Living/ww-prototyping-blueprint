@@ -1,0 +1,8 @@
+.page-header {
+  @include outer-container;
+}
+
+.page-content {
+  @include outer-container;
+  margin-bottom: 2em;
+}

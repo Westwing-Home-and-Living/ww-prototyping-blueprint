@@ -1,0 +1,38 @@
+/*doc
+---
+title: Box
+name: 01_base
+category: Base
+---
+
+This is a box
+
+```html_example
+<div class="box box--default">
+    <p>
+        This is a default box
+    </p>
+</div>
+```
+
+*/
+
+.box {
+  border: 1px solid black;
+  text-align: center;
+  height: 90px;
+  color: black;
+  padding: 1em;
+  margin-bottom: 1em;
+  p {
+    @include setFontSize($font-size-beta, $lines: 1, $marginTopLines: 1, $marginBottomLines: 0);
+  }
+}
+.box--default {
+  @include shift(2);
+  @include span-columns(8);
+}
+.box--small {
+  @include shift(3);
+  @include span-columns(6);
+}

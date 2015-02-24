@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         // Task configuration.
         connect: {
             server: {
-                options:{
+                options: {
                     port: 9000,
                     hostname: '127.0.0.1',
                     base: 'build/',
@@ -48,6 +48,7 @@ module.exports = function (grunt) {
             options: {
                 flatten: true,
                 layout: 'page.hbs',
+                data: './src/site/templates/data/**/*.{json,yml}',
                 layoutdir: './src/site/templates/layouts/',
                 partials: './src/site/templates/partials/**/*.hbs'
             },
@@ -55,7 +56,8 @@ module.exports = function (grunt) {
                 files: [
                     {src: './src/site/content/_pages/**/*.hbs', dest: 'build/www/'}
                 ]
-            }},
+            }
+        },
         sass: {
             options: {
                 sourceMap: true
@@ -66,7 +68,7 @@ module.exports = function (grunt) {
                     {src: 'src/sass/main.scss', dest: 'build/styleguide/css/main.css'}
                 ]
             },
-            styleguide: {
+            site: {
                 files: [
                     {src: 'src/sass/styleguide.scss', dest: 'build/styleguide/css/styleguide.css'}
                 ]
@@ -82,15 +84,14 @@ module.exports = function (grunt) {
         uglify: {
             styleguide: {
                 files: [
-                    {src: 'src/js/handlebars-v2.0.0.js', dest: 'build/styleguide/js/handlebars.min.js'},
-                    {src: 'src/js/styleguide.js', dest: 'build/styleguide/js/styleguide.min.js'}
+                    {src: 'src/js/site.js', dest: 'build/www/js/site.min.js'}
                 ]
             }
         },
         watch: {
             sass: {
                 files: 'src/**/*.scss',
-                tasks: ['sass:www','sass:styleguide','hologram'],
+                tasks: ['sass:www', 'sass:site', 'hologram'],
                 options: {
                     atBegin: true,
                     spawn: false,
@@ -115,7 +116,7 @@ module.exports = function (grunt) {
                     livereload: true
                 }
             },
-            staticsitegenerator: {
+            assemble: {
                 files: 'src/site/**/*.*',
                 tasks: ['assemble'],
                 options: {
@@ -128,6 +129,6 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('serve', ['connect:server','open','watch']);
+    grunt.registerTask('serve', ['connect:server', 'open', 'watch']);
 
 };

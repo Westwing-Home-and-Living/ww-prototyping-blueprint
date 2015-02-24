@@ -1,6 +1,23 @@
+/* Vendor */
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+
+/* Vars */
+@import "utility/vars/config";
+
+/* Mixins */
+@import "utility/mixins/typography";
+
 /* Base Files */
 @import 'base/normalize';
-@import "styleguide/example_modules_base";
-@import "styleguide/example_modules_blocks";
+
+/* Layout */
+@import "layout/base-layout";
+
+/* Modules */
+@import "modules/media-object";
+@import "modules/buttons";
+@import "modules/box";
+
 
 

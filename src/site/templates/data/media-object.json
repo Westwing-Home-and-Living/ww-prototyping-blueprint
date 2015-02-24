@@ -1,0 +1,36 @@
+{
+  "media--default": {
+    "class": "media-object",
+    "image": "https://placekitten.com/g/200/300",
+    "modifier": "media-object--default",
+    "heading": "Panel Heading",
+    "copy": "Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit."
+  },
+  "media--text": {
+    "class": "media-object",
+    "modifier": "media-object--text",
+    "heading": "Panel Heading",
+    "copy": "Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit."
+  },
+  "media--reverse": {
+    "class": "media-object",
+    "image": "https://placekitten.com/g/200/300",
+    "modifier": "media-object--reverse",
+    "heading": "Panel Heading",
+    "copy": "Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit."
+  },
+  "media--hero": {
+    "class": "media-object",
+    "image": "https://placekitten.com/g/335/360",
+    "modifier": "media-object--hero",
+    "heading": "Let me be your hero",
+    "copy": "Let me be your hero Would you dance If I asked you to dance? Would you run And never look back? Would you cry If you saw me crying? And would you save my soul, tonight? Would you tremble If I touched your lips? Would you laugh? Oh please tell me this. Now would you die For the one you loved? Hold me in your arms, tonight.",
+    "button": {
+      "button--default": {
+        "class": "button",
+        "modifier": "button--default",
+        "copy": "Click here for more Enrique Iglesias"
+      }
+    }
+  }
+}

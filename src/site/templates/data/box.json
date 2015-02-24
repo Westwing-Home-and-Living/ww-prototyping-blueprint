@@ -1,0 +1,12 @@
+{
+  "box--default": {
+    "class": "box",
+    "modifier": "box--default",
+    "copy": "This is a default box"
+  },
+  "box--small": {
+    "class": "box",
+    "modifier": "box--small",
+    "copy": "This is a small box"
+  }
+}

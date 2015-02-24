@@ -1,0 +1,7 @@
+{
+  "button--default": {
+    "class": "button",
+    "modifier": "button--default",
+    "copy": "Click"
+  }
+}

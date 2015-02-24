@@ -1,0 +1,63 @@
+// ==========================================================================//
+// $Prepare the magic
+// ==========================================================================//
+
+
+// TargetContextResult-Calculator -- target ÷ context = result
+@function returnRem($target, $context) {
+  @return ($target/$context)*1rem;
+}
+
+//  Calculate and Set FontSize
+//  Important: Set floating point number precision in [your Ruby folder..]\lib\sass\script\number.rb to 10. Thank me later ;)
+//
+//  Usage:              @include setFontSize($zeta,$lines: 1,$marginTopLines:1,$marginBottomLines:1);
+//
+//  $targetSize:        Target Font-Size
+//  $lines:             Line-Height of Font in "$baseline"-Units. Default = 1
+//  $marginTopLines:    Margin-Top of Font in "$baseline"-Units. Default = 1
+//  $marginBottomLines: Margin-Bottom of Font in "$baseline"-Units. Default = 1
+//
+@mixin setFontSize($targetSize, $lines: 1, $marginTopLines:1, $marginBottomLines:1) {
+  // PX Fallback
+  font-size: $targetSize;
+  line-height: $baseline * $lines;
+  margin-top: $baseline * $marginTopLines;
+  margin-bottom: $baseline * $marginTopLines;
+  // rem calculations
+  font-size:      returnRem($targetSize, $font-size-base );
+  line-height:    returnRem($baseline * $lines, $font-size-base );
+  margin-top:     returnRem($baseline * $marginTopLines, $font-size-base );
+  margin-bottom:  returnRem($baseline * $marginBottomLines, $font-size-base );
+}
+
+
+
+
+// ==========================================================================//
+// $Debug this wizardry
+// ==========================================================================//
+
+// Overlay Verticl Grid for debugging purposes
+@mixin debugShowVerticalGrid($verticalGridColor: red) {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: -webkit-linear-gradient(rgba($verticalGridColor, 0.6) 1px, transparent 1px);
+    -webkit-background-size: 100% returnRem($baseline,$font-size-base );
+  }
+}
+// Use this mixin so you can search through your debug styles fast
+@mixin debugShowElementHeight ($elementBackgroundColor) {
+  background-color: $elementBackgroundColor;
+}
+
+
+

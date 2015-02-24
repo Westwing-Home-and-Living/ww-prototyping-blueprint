@@ -29,6 +29,8 @@ currently added directly in `build/www` folder. However future versions should h
 ## Quickstart
 
 1. Install [hologram][https://github.com/trulia/hologram].
+1. Install [bourbon][https://github.com/trulia/hologram].
+1. Install [neat][https://github.com/trulia/hologram].
 2. Install node packages.
 3. Run `grunt`. Files will be in build directory
 

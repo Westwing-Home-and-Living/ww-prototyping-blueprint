@@ -1,0 +1,11 @@
+<div class="{{class}} {{modifier}}">
+    {{#if image}}<img class="media-object__figure" src="{{image}}" alt="">{{/if}}
+    <div class="media-object__body">
+        <h3 class="media-object__heading">{{heading}}</h3>
+        <p>{{copy}}</p>
+
+        {{#if button}}
+            {{> button button.button--default}}
+        {{/if}}
+    </div>
+</div>

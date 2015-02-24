@@ -1,0 +1,56 @@
+.media-object {
+  @include span-columns(4);
+  height: 220px;
+  background-color: white;
+  border: 1px solid rgba(74, 74, 74, 0.26);
+  margin-bottom: 1em;
+  padding: 1em;
+  overflow: hidden;
+  &:nth-child(3n+0){
+    margin-right: 0;
+  }
+  .media-object__body {
+    @include setFontSize($font-size-eta, $lines: 1, $marginTopLines: 0, $marginBottomLines: 0);
+  }
+  .media-object__heading {
+    @include setFontSize($font-size-epsilon, $lines: 1, $marginTopLines: 0, $marginBottomLines: 1);
+  }
+}
+
+
+.media-object--default {
+  .media-object__figure {
+    @include span-columns(1 of 4);
+  }
+  .media-object__body {
+    @include span-columns(3 of 4);
+  }
+}
+
+.media-object--text {
+  .media-object__body {
+    @include span-columns(4 of 4);
+  }
+}
+
+.media-object--reverse {
+  @include direction-context(right-to-left) {
+    .media-object__figure {
+      @include span-columns(1 of 4);
+    }
+    .media-object__body {
+      @include span-columns(3 of 4);
+    }
+  }
+}
+
+.media-object--hero {
+  height: 400px;
+  @include span-columns(12);
+  .media-object__figure {
+    @include span-columns(4 of 12);
+  }
+  .media-object__body {
+    @include span-columns(8 of 12);
+  }
+}
