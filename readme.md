@@ -10,23 +10,11 @@ The basic file structure for this project looks like this.
 .
 ├── build
 │   ├── styleguide
-│   │   └── css
 │   └── www
-│       ├── css
-│       └── js
 └── src
     ├── js
     ├── sass
-    │   ├── ...
-    │   ├── modules
-    │   ├── styleguide
-    │   ├── ...
     ├── site
-    │   ├── content
-    │   └── templates
-    │       ├── data
-    │       ├── layouts
-    │       └── partials
     └── styleguide
 ```
 
@@ -50,12 +38,12 @@ JavaScript and CSS are mainly shared (`src/js`) and (`src/sass`).
     ├── sass
     │   ├── ...
     │   ├── modules
-    │   ├── styleguide            (1b) Create partial css
+    │   ├── styleguide            (1c) Create partial css
     │   │                         (3)  If final, document your css
     │   ├── ...
     ├── site
-    │   ├── content               (2)  Render partial in site and test
-    │   └── templates
+    │   ├── content               (2)  Render partial in site and test. Iterate.
+    │   └── templates             (1b) Create mock data for partial
     │       ├── data
     │       ├── layouts
     │       └── partials          (1a) Create partial markup
